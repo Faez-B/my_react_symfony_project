@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
-// start the Stimulus application
 import './bootstrap';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
 
 function App() {
     return (
@@ -12,6 +13,14 @@ function App() {
         <header>
             <h1>React App</h1>
         </header>
+
+        <BrowserRouter>
+            <Routes>
+                <Route path="/">
+                    <Route index element={<Home />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
       </div>
     );
 }
